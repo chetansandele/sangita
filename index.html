@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sangita ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+}
+
+body{
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+  color:white;
+  background:#02030a;
+}
+
+.sky{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 50% 15%,
+    #354477 0%,
+    #151b3d 35%,
+    #050713 70%,
+    #010207 100%);
+}
+
+/* ---------------- STARS ---------------- */
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+
+  box-shadow:0 0 8px white;
+
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{
+    opacity:.2;
+    transform:scale(.6);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.5);
+  }
+}
+
+/* ---------------- MOON ---------------- */
+
+.moon{
+  position:absolute;
+
+  top:7%;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:125px;
+  height:125px;
+
+  border-radius:50%;
+
+  background:#fffbd7;
+
+  box-shadow:
+    0 0 25px white,
+    0 0 60px #fff5a0,
+    0 0 120px rgba(255,245,150,.35);
+
+  z-index:2;
+}
+
+.moon:before{
+  content:"";
+
+  position:absolute;
+
+  width:27px;
+  height:27px;
+
+  border-radius:50%;
+
+  background:#ddd8b5;
+
+  opacity:.4;
+
+  top:28px;
+  left:27px;
+}
+
+.moon:after{
+  content:"";
+
+  position:absolute;
+
+  width:18px;
+  height:18px;
+
+  border-radius:50%;
+
+  background:#ddd8b5;
+
+  opacity:.4;
+
+  right:27px;
+  bottom:29px;
+}
+
+/* ---------------- CARD ---------------- */
+
+.card{
+  position:absolute;
+
+  left:50%;
+  bottom:3%;
+
+  transform:translateX(-50%);
+
+  width:92%;
+  max-width:430px;
+
+  padding:22px 18px;
+
+  text-align:center;
+
+  border-radius:27px;
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.18);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.55),
+    inset 0 0 20px rgba(255,255,255,.03);
+
+  z-index:5;
+}
+
+/* ---------------- SMALL TITLE ---------------- */
+
+.small{
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  color:#cbd1ff;
+
+  margin-bottom:8px;
+}
+
+/* ---------------- NAME ---------------- */
+
+h1{
+  font-size:30px;
+
+  margin-bottom:13px;
+
+  color:#fff;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 25px rgba(255,255,255,.5);
+}
+
+/* ---------------- TEXT ---------------- */
+
+.text{
+  font-size:16px;
+
+  line-height:1.65;
+
+  color:#f4f4f4;
+}
+
+.pink{
+  color:#ff9dcc;
+
+  font-weight:bold;
+
+  text-shadow:
+    0 0 8px rgba(255,100,170,.35);
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button{
+  margin-top:18px;
+
+  padding:13px 23px;
+
+  border:0;
+
+  border-radius:30px;
+
+  color:white;
+
+  font-size:15px;
+
+  font-weight:bold;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff4f9a,
+      #8b5cff
+    );
+
+  box-shadow:
+    0 0 20px rgba(255,70,160,.45);
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+button:active{
+  transform:scale(.93);
+}
+
+/* ---------------- MESSAGE ---------------- */
+
+#message{
+  display:none;
+
+  margin-top:18px;
+
+  padding:17px 13px;
+
+  border-radius:19px;
+
+  background:rgba(255,255,255,.07);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  font-size:15px;
+
+  line-height:1.65;
+
+  color:#fff;
+
+  animation:appear 1s ease;
+}
+
+@keyframes appear{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* ---------------- HEARTS ---------------- */
+
+.heart{
+  position:absolute;
+
+  bottom:-30px;
+
+  font-size:23px;
+
+  z-index:10;
+
+  animation:
+    rise 5s linear forwards;
+}
+
+@keyframes rise{
+
+  0%{
+    transform:
+      translateY(0)
+      scale(.5);
+
+    opacity:0;
+  }
+
+  20%{
+    opacity:1;
+  }
+
+  100%{
+    transform:
+      translateY(-110vh)
+      rotate(360deg)
+      scale(1.2);
+
+    opacity:0;
+  }
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-height:680px){
+
+  .moon{
+    width:90px;
+    height:90px;
+    top:3%;
+  }
+
+  .moon:before{
+    width:19px;
+    height:19px;
+
+    top:20px;
+    left:19px;
+  }
+
+  .moon:after{
+    width:12px;
+    height:12px;
+
+    right:19px;
+    bottom:20px;
+  }
+
+  .card{
+    bottom:1.5%;
+    padding:14px 12px;
+  }
+
+  .small{
+    font-size:9px;
+  }
+
+  h1{
+    font-size:25px;
+    margin-bottom:8px;
+  }
+
+  .text{
+    font-size:14px;
+    line-height:1.45;
+  }
+
+  button{
+    margin-top:10px;
+    padding:10px 18px;
+    font-size:14px;
+  }
+
+  #message{
+    margin-top:10px;
+    padding:12px 9px;
+
+    font-size:13px;
+    line-height:1.45;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky">
+
+  <!-- MOON -->
+  <div class="moon"></div>
+
+
+  <!-- MAIN CARD -->
+  <div class="card">
+
+    <div class="small">
+      ✨ A LITTLE SURPRISE FOR YOU ✨
+    </div>
+
+
+    <h1>
+      Sangita 🌙❤️
+    </h1>
+
+
+    <div class="text">
+
+      Kabhi-kabhi kisi ke liye
+      <br>
+
+      kuch special karne ke liye
+      <br>
+
+      duniya ki saari cheezein nahi chahiye...
+
+      <br><br>
+
+      Bas ek
+      <span class="pink">
+        sachhi feeling
+      </span>
+
+      aur dil se nikli kuch baatein
+      <br>
+      kaafi hoti hain. ❤️
+
+      <br><br>
+
+      Tumne kaha tha...
+
+      <br>
+
+      <span class="pink">
+        “Mujhe Chand-Taare laakar doge?”
+      </span>
+
+      🌙✨
+
+      <br><br>
+
+      Chand toh aasman mein hi rehne do...
+
+      <br>
+
+      kyunki agar main use tod kar le bhi aaun,
+      <br>
+
+      toh tumhari aankhon ki chamak ke
+      <br>
+
+      saamne woh bhi kam lagega. 🥹❤️
+
+    </div>
+
+
+    <!-- BUTTON -->
+
+    <button onclick="surprise()">
+
+      💌 Ek baat kehni hai...
+
+    </button>
+
+
+    <!-- SECRET MESSAGE -->
+
+    <div id="message">
+
+      <b>Sangita... ❤️</b>
+
+      <br><br>
+
+      Shayad main tumhe
+      <br>
+
+      har woh cheez na de paun
+      <br>
+
+      jo tum deserve karti ho...
+
+      <br><br>
+
+      Lekin ek cheez hamesha de sakta hoon—
+
+      <br>
+
+      <span class="pink">
+        dil se nikli hui respect,
+        care aur ek genuine smile. ❤️
+      </span>
+
+      <br><br>
+
+      Aur haan...
+
+      <br>
+
+      tumne Chand-Taare maange the na? 🌙✨
+
+      <br><br>
+
+      <b>
+
+      Chand aur Taare toh bahut log
+      dikha denge...
+
+      <br>
+
+      main bas itna chahta hoon
+
+      <br>
+
+      ki tumhari life mein meri wajah se
+
+      <br>
+
+      thodi si khushi zaroor rahe. 🫶
+
+      </b>
+
+      <br><br>
+
+      <span class="pink">
+        — Chiku ❤️
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* ---------------- CREATE STARS ---------------- */
+
+for(let i=0;i<120;i++){
+
+  const star =
+    document.createElement("div");
+
+  star.className="star";
+
+  star.style.left =
+    Math.random()*100+"%";
+
+  star.style.top =
+    Math.random()*100+"%";
+
+  star.style.animationDelay =
+    Math.random()*2+"s";
+
+  document
+    .getElementById("sky")
+    .appendChild(star);
+}
+
+
+/* ---------------- SURPRISE ---------------- */
+
+function surprise(){
+
+  document
+    .getElementById("message")
+    .style.display="block";
+
+
+  /* HEARTS */
+
+  for(let i=0;i<45;i++){
+
+    const heart =
+      document.createElement("div");
+
+    heart.className="heart";
+
+
+    const emojis=[
+      "❤️",
+      "💗",
+      "💖",
+      "✨",
+      "🌟"
+    ];
+
+
+    heart.innerHTML =
+      emojis[
+        Math.floor(
+          Math.random()*emojis.length
+        )
+      ];
+
+
+    heart.style.left =
+      Math.random()*100+"%";
+
+
+    heart.style.animationDuration =
+      (3+Math.random()*3)+"s";
+
+
+    document
+      .getElementById("sky")
+      .appendChild(heart);
+
+
+    setTimeout(()=>{
+
+      heart.remove();
+
+    },6000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
